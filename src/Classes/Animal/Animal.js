@@ -4,8 +4,8 @@ import HolyOrchid from '../plants/HolyOrchid';
 import BloodHerb from '../plants/BloodHerb';
 
 export default class Animal extends Organism {
-  constructor(grid, strength, initiative, x, y) {
-    super(grid, strength, initiative, x, y);
+  constructor(grid, x, y) {
+    super(grid, x, y);
   }
 
   fight = (organismToFightWith) => {

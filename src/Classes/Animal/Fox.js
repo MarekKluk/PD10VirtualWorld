@@ -7,8 +7,10 @@ import Wasp from './Wasp';
 import Tortoise from './Tortoise';
 
 export default class Fox extends Animal {
-  constructor(grid, strength, initiative, x, y, icon) {
-    super(grid, strength, initiative, x, y);
+  strength = 4;
+  initiative = 7;
+  constructor(grid, x, y, icon) {
+    super(grid, x, y);
     this.x = x;
     this.y = y;
     this.icon = document.createElement('IMG');
@@ -43,6 +45,6 @@ export default class Fox extends Animal {
   };
 
   produceNewSpeciesMember = (x, y) => {
-    return new Fox(this.grid, 4, 7, x, y, this.icon);
+    return new Fox(this.grid, x, y, this.icon);
   };
 }

@@ -1,8 +1,6 @@
 export default class Organism {
-  constructor(grid, strength, initiative, x, y) {
+  constructor(grid, x, y) {
     this.grid = grid;
-    this.strength = strength;
-    this.initiative = initiative;
     this.x = x;
     this.y = y;
   }

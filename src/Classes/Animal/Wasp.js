@@ -3,8 +3,10 @@ import Plant from '../plants/Plant';
 import Tortoise from './Tortoise';
 
 export default class Wasp extends Animal {
-  constructor(grid, strength, initiative, x, y, icon) {
-    super(grid, strength, initiative, x, y);
+  strength = 4;
+  initiative = 4;
+  constructor(grid, x, y, icon) {
+    super(grid, x, y);
     this.x = x;
     this.y = y;
     this.icon = document.createElement('IMG');
@@ -31,6 +33,6 @@ export default class Wasp extends Animal {
   };
 
   produceNewSpeciesMember = (x, y) => {
-    return new Wasp(this.grid, 4, 4, x, y, this.icon);
+    return new Wasp(this.grid, x, y, this.icon);
   };
 }

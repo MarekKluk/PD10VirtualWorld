@@ -6,8 +6,8 @@ import giveWaspChanceToFlee from '../../functions/giveWaspChanceToFlee';
 export default class Wolf extends Animal {
   strength = 9;
   initiative = 5;
-  constructor(grid, strength, initiative, x, y, icon) {
-    super(grid, strength, initiative, x, y);
+  constructor(grid, x, y, icon) {
+    super(grid, x, y);
     this.x = x;
     this.y = y;
     this.icon = document.createElement('IMG');
@@ -36,6 +36,6 @@ export default class Wolf extends Animal {
   };
 
   produceNewSpeciesMember = (x, y) => {
-    return new Wolf(this.grid, 9, 5, x, y, this.icon);
+    return new Wolf(this.grid, x, y, this.icon);
   };
 }

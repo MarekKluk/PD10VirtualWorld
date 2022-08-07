@@ -11,9 +11,8 @@ function randomizeIfPlantWillSpread(plantToSpread) {
 }
 
 export default class Plant extends Organism {
-  constructor(grid, strength, initiative, x, y, chanceToSpread) {
-    super(grid, strength, initiative, x, y);
-    this.chanceToSpread = chanceToSpread;
+  constructor(grid, x, y) {
+    super(grid, x, y);
   }
   spread = () => {
     if (randomizeIfPlantWillSpread(this)) {

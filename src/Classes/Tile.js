@@ -26,30 +26,30 @@ export default class Tile {
         });
     }
     createWolfOnClick = () => {
-        return new Wolf(this.board.grid, 9, 5, this.x, this.y);
+        return new Wolf(this.board.grid, this.x, this.y);
     };
     createTortoiseOnClick = () => {
-        return new Tortoise(this.board.grid, 2, 1, this.x, this.y);
+        return new Tortoise(this.board.grid, this.x, this.y);
     };
     createSheepOnClick = () => {
-        return new Sheep(this.board.grid, 3, 4, this.x, this.y);
+        return new Sheep(this.board.grid, this.x, this.y);
     };
     createFoxOnClick = () => {
-        return new Fox(this.board.grid, 4, 7, this.x, this.y);
+        return new Fox(this.board.grid, this.x, this.y);
     };
     createWaspOnClick = () => {
-        return new Wasp(this.board.grid, 4, 4, this.x, this.y);
+        return new Wasp(this.board.grid, this.x, this.y);
     };
     createGrassOnClick = () => {
-        return new Grass(this.board.grid, 0, 0, this.x, this.y, 1);
+        return new Grass(this.board.grid, this.x, this.y);
     };
     createHolyOrchidOnClick = () => {
-        return new HolyOrchid(this.board.grid, 0, 0, this.x, this.y, 1);
+        return new HolyOrchid(this.board.grid, this.x, this.y);
     };
     createBloodHerbOnClick = () => {
-        return new BloodHerb(this.board.grid, 0, 0, this.x, this.y, 1);
+        return new BloodHerb(this.board.grid, this.x, this.y);
     };
     createMandrakeOnClick = () => {
-        return new Mandrake(this.board.grid, 0, 0, this.x, this.y, 1);
+        return new Mandrake(this.board.grid, this.x, this.y);
     };
 }

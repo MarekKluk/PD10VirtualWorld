@@ -139,23 +139,23 @@ export default class Board {
         const randomNumberToRollOrganism = Math.floor(Math.random() * 9);
         switch (randomNumberToRollOrganism) {
             case 0:
-                return new Wolf(this.grid, 9, 5, x, y);
+                return new Wolf(this.grid, x, y);
             case 1:
-                return new Tortoise(this.grid, 2, 1, x, y);
+                return new Tortoise(this.grid, x, y);
             case 2:
-                return new Sheep(this.grid, 3, 4, x, y);
+                return new Sheep(this.grid, x, y);
             case 3:
-                return new Fox(this.grid, 4, 7, x, y);
+                return new Fox(this.grid, x, y);
             case 4:
-                return new Wasp(this.grid, 4, 4, x, y);
+                return new Wasp(this.grid, x, y);
             case 5:
-                return new Grass(this.grid, 0, 0, x, y, 1);
+                return new Grass(this.grid, x, y);
             case 6:
-                return new HolyOrchid(this.grid, 0, 0, x, y, 1);
+                return new HolyOrchid(this.grid, x, y);
             case 7:
-                return new BloodHerb(this.grid, 0, 0, x, y, 1);
+                return new BloodHerb(this.grid, x, y);
             case 8:
-                return new Mandrake(this.grid, 0, 0, x, y, 3);
+                return new Mandrake(this.grid, x, y);
         }
     };
 
@@ -164,7 +164,7 @@ export default class Board {
             alert('Too many organisms');
             return;
         }
-        this.player = new Player(this.grid, 5, 4, this.generateCoordinates(), this.generateCoordinates(),);
+        this.player = new Player(this.grid, this.generateCoordinates(), this.generateCoordinates());
         this.setOrganism(this.player);
         for (let i = 0; i <= amountOfOrganisms; i++) {
             const organism = this.randomizeOrganismForNewGame();

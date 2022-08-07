@@ -6,8 +6,8 @@ import giveWaspChanceToFlee from '../../functions/giveWaspChanceToFlee';
 export default class Tortoise extends Animal {
   strength = 2;
   initiative = 1;
-  constructor(grid, strength, initiative, x, y, icon) {
-    super(grid, strength, initiative, x, y);
+  constructor(grid, x, y, icon) {
+    super(grid, x, y);
     this.x = x;
     this.y = y;
     this.icon = document.createElement('IMG');
@@ -32,6 +32,6 @@ export default class Tortoise extends Animal {
     }
   };
   produceNewSpeciesMember = (x, y) => {
-    return new Tortoise(this.grid, 2, 1, x, y, this.icon);
+    return new Tortoise(this.grid, x, y, this.icon);
   };
 }
