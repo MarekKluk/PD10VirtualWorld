@@ -42,11 +42,11 @@ export default class Board {
         for (let row = 0; row < this.grid.length; row++) {
             for (let column = 0; column < this.grid[row].length; column++) {
                 const tile = this.grid[row][column];
-                if (tile.currentOrganism) {
+                if (tile.currentOrganism !== null) {
                     const icon = tile.currentOrganism.icon;
                     tile.tileElement.innerHTML = '';
                     tile.tileElement.append(icon);
-                }
+                } else tile.tileElement.innerHTML = '';
             }
         }
     };
@@ -174,8 +174,8 @@ export default class Board {
     };
 
     gameOver = () => {
-        this.refresh();
         this.player = null;
+        this.refresh();
         document.removeEventListener('keyup', this.setNewCoordinatesForPlayer);
         setInterval(this.gameAfterPlayerDied, 100);
     };
@@ -225,10 +225,14 @@ export default class Board {
         }
     }
     movePlayer = (newX, newY) => {
-        this.moveOrganismsBeforePlayerMovement();
         const currentX = this.player.x;
         const currentY = this.player.y;
         const tileBeforeMovement = this.grid[currentX][currentY];
+        this.moveOrganismsBeforePlayerMovement();
+        if (tileBeforeMovement.currentOrganism === null) {
+            this.gameOver();
+            return;
+        }
         const checkOrganismCoordinates = checkIfOrganismIsOutsideOfMap(
             newX,
             currentX,
@@ -239,6 +243,10 @@ export default class Board {
             this.grid[checkOrganismCoordinates.newX][checkOrganismCoordinates.newY];
         const currentTile = this.grid[currentX][currentY];
         this.player.interaction(newTile.currentOrganism);
+        if (tileBeforeMovement.currentOrganism === null) {
+            this.gameOver();
+            return;
+        }
         if (
             newTile.currentOrganism === null &&
             currentTile.currentOrganism !== null
