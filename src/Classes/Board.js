@@ -5,7 +5,7 @@ import generateNewCoordinate from "../functions/generateNewCoordinate";
 import checkIfOrganismIsOutsideOfMap from "../functions/checkIfOrganismIsOutsideOfMap";
 import Organism from "./Organism";
 import Wolf from "./Animal/Wolf";
-import Tortoise from "./Animal/Tortoise";
+import Scarab from "./Animal/Scarab";
 import Sheep from "./Animal/Sheep";
 import Fox from "./Animal/Fox";
 import Wasp from "./Animal/Wasp";
@@ -141,7 +141,7 @@ export default class Board {
             case 0:
                 return new Wolf(this.grid, x, y);
             case 1:
-                return new Tortoise(this.grid, x, y);
+                return new Scarab(this.grid, x, y);
             case 2:
                 return new Sheep(this.grid, x, y);
             case 3:

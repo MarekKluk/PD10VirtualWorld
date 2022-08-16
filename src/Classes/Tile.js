@@ -1,5 +1,5 @@
 import Wolf from "./Animal/Wolf";
-import Tortoise from "./Animal/Tortoise";
+import Scarab from "./Animal/Scarab";
 import Sheep from "./Animal/Sheep";
 import Fox from "./Animal/Fox";
 import Wasp from "./Animal/Wasp";
@@ -28,8 +28,8 @@ export default class Tile {
     createWolfOnClick = () => {
         return new Wolf(this.board.grid, this.x, this.y);
     };
-    createTortoiseOnClick = () => {
-        return new Tortoise(this.board.grid, this.x, this.y);
+    createScarabOnClick = () => {
+        return new Scarab(this.board.grid, this.x, this.y);
     };
     createSheepOnClick = () => {
         return new Sheep(this.board.grid, this.x, this.y);

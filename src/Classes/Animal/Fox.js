@@ -4,7 +4,7 @@ import Plant from '../plants/Plant';
 import Wolf from './Wolf';
 import giveWaspChanceToFlee from '../../functions/giveWaspChanceToFlee';
 import Wasp from './Wasp';
-import Tortoise from './Tortoise';
+import Scarab from './Scarab';
 
 export default class Fox extends Animal {
   strength = 4;
@@ -30,7 +30,7 @@ export default class Fox extends Animal {
     if (
       organismToInteractWith instanceof Player ||
       organismToInteractWith instanceof Wolf ||
-      organismToInteractWith instanceof Tortoise
+      organismToInteractWith instanceof Scarab
     ) {
       return;
     } else if (organismToInteractWith instanceof Wasp) {

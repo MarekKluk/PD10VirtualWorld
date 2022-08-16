@@ -3,7 +3,7 @@ export default class NewOrganismPopup {
         this.board = board;
         this.popup = document.querySelector('.popup-container');
         this.wolfTile = document.querySelector('.wolf-tile');
-        this.tortoiseTile = document.querySelector('.tortoise-tile');
+        this.scarabTile = document.querySelector('.scarab-tile');
         this.sheepTile = document.querySelector('.sheep-tile');
         this.foxTile = document.querySelector('.fox-tile');
         this.waspTile = document.querySelector('.wasp-tile');
@@ -12,7 +12,7 @@ export default class NewOrganismPopup {
         this.bloodHerbTile = document.querySelector('.blood-herb-tile');
         this.mandrakeTile = document.querySelector('.mandrake-tile');
         this.wolfTile.addEventListener('click', this.createWolf);
-        this.tortoiseTile.addEventListener('click', this.createTortoise);
+        this.scarabTile.addEventListener('click', this.createScarab);
         this.sheepTile.addEventListener('click', this.createSheep);
         this.foxTile.addEventListener('click', this.createFox);
         this.waspTile.addEventListener('click', this.createWasp);
@@ -34,8 +34,8 @@ export default class NewOrganismPopup {
     createWolf = () => {
         this.addOrganismOnClick(this.tile.createWolfOnClick());
     };
-    createTortoise = () => {
-        this.addOrganismOnClick(this.tile.createTortoiseOnClick());
+    createScarab = () => {
+        this.addOrganismOnClick(this.tile.createScarabOnClick());
     };
     createSheep = () => {
         this.addOrganismOnClick(this.tile.createSheepOnClick());

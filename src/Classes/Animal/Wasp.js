@@ -1,6 +1,6 @@
 import Animal from './Animal';
 import Plant from '../plants/Plant';
-import Tortoise from './Tortoise';
+import Scarab from './Scarab';
 
 export default class Wasp extends Animal {
   strength = 4;
@@ -26,7 +26,7 @@ export default class Wasp extends Animal {
     if (organismToInteractWith instanceof Wasp) {
       this.mate(organismToInteractWith);
       return;
-    } else if (organismToInteractWith instanceof Tortoise) {
+    } else if (organismToInteractWith instanceof Scarab) {
       return;
     }
     this.fight(organismToInteractWith);
