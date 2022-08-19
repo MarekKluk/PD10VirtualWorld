@@ -20,6 +20,10 @@ body {
   border: 1px solid black;
   cursor: pointer;
 }
+.one-tile img {
+  width: 35px;
+  height: 35px;
+}
 .one-tile:hover {
   background-color: gray;
 }
@@ -101,4 +105,8 @@ body {
 .organism-list img {
   width: 50px;
   height: 50px;
+}
+
+.rotate-tile-by-45-deg {
+  transform: rotate(45Deg);
 }

@@ -122,9 +122,39 @@ export default class Board {
             organism.y = checkOrganismCoordinates.newY;
             currentTile.currentOrganism = null;
             newTile.currentOrganism = organism;
+            this.rotateOrganism(currentX, checkOrganismCoordinates.newX, currentY, checkOrganismCoordinates.newY, organism);
         }
     };
 
+    rotateOrganism = (currentX, newX, currentY, newY, organism) => {
+        const icon = organism.icon;
+        const howXChanged = currentX - newX;
+        const howYChanged = currentY - newY;
+        if (howXChanged === -1 && howYChanged === 0){
+            icon.style.transform = 'rotate(-0.5turn)'
+        }
+        else if (howXChanged === 0 && howYChanged === -1) {
+             icon.style.transform = 'rotate(0.25turn)'
+         }
+        else if (howXChanged === 1 && howYChanged === 0) {
+             icon.style.transform = 'rotate(0turn)'
+         }
+        else if (howXChanged === 0 && howYChanged === 1) {
+            icon.style.transform = 'rotate(-0.25turn)'
+        }
+        else if (howXChanged === -1 && howYChanged === -1) {
+            icon.style.transform = 'rotate(0.375turn)'
+        }
+        else if (howXChanged === -1 && howYChanged === 1) {
+            icon.style.transform = 'rotate(-0.375turn)'
+        }
+        else if (howXChanged === 1 && howYChanged === -1) {
+            icon.style.transform = 'rotate(0.125turn)'
+        }
+        else if (howXChanged === 1 && howYChanged === 1) {
+            icon.style.transform = 'rotate(-0.125turn)'
+        }
+    }
     generateCoordinates = () => {
         return Math.floor(Math.random() * 19);
     };
@@ -255,6 +285,7 @@ export default class Board {
             this.player.y = checkOrganismCoordinates.newY;
             tileBeforeMovement.currentOrganism = null;
             this.setOrganism(this.player);
+            this.rotateOrganism(checkOrganismCoordinates.newX, currentX, checkOrganismCoordinates.newY, currentY, this.player);
         }
         this.moveOrganismsAfterPlayerMovement();
         this.refresh();
