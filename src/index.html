@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
   <head>
     <meta charset="UTF-8" />
     <title>Webpack App</title>
   </head>
   <body>
+    <div class ="new-game-popup-container">
+      <header class = "new-game-header">Virtual World</header>
+      <div class="rules-description, text-style"> <p>Virtual World is a turn-based game with different organisms. The map has 20x20 tiles and contains various animals, plants, and the player.</p>
+       <p> Rules: </p>
+        <ul>
+          <li>In each turn, every organism performs an action in the order of initiative. The organisms with higher initiative move first. If organisms have equal initiative, the older organism has priority,</li>
+          <li>Every animal moves in a random direction each turn, if not specified otherwise,</li>
+          <li>If two animals of different species meet, they fight. The animal with higher strength wins,</li>
+          <li>If animals of the same species meet, they create a third animal in one of the free adjoining fields,</li>
+          <li>The plants do not move in any direction at each turn. Instead, they have a 10% chance of spreading to one of the adjoining fields if there is any unoccupied,</li>
+          <li>If an animal sets foot on a plant, it gets eaten,</li>
+          <li>You can add new organism, by clicking on an empty field,</li>
+          <li>Each organism has specific unique skills, that are described when you try to add new one.</li>
+        </ul>
+        <div class="controls-explanation, text-style">
+         <p> Controls:</p>
+         <p>Player can move in all eight directions, or stay in the same place for the turn.</p>
+          You can control the player with a numpad, or if your keyboard is not equipped with it, then with the buttons on the right side of the board.
+        </div>
+      </div>
+      <div class="new-game-button-container">
+        <button class="new-game-button">New Game</button>
+      </div>
+    </div>
     <div class="map"></div>
     <div class="popup-container">
       <header class="popup-header">
