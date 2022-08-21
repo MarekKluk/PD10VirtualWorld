@@ -11,7 +11,8 @@ export default class Scarab extends Animal {
     this.x = x;
     this.y = y;
     this.icon = document.createElement('IMG');
-    this.icon.src = 'https://www.tibia-wiki.net/images/9/9a/Burrowing_Beetle.gif';
+    this.icon.src =
+      'https://www.tibia-wiki.net/images/9/9a/Burrowing_Beetle.gif';
   }
   interaction = (organismToInteractWith) => {
     if (organismToInteractWith instanceof Animal) {
