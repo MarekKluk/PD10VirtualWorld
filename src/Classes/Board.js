@@ -16,11 +16,50 @@ import Mandrake from "./plants/Mandrake";
 import Player from "./Animal/Player";
 let map = document.querySelector('.map');
 
+
+
+
 export default class Board {
     grid = null;
     player = null;
     constructor() {
         this.initialize();
+        this.upLeftButton = document.querySelector(".up-left-button");
+        this.upButton = document.querySelector(".up-button");
+        this.upRightButton = document.querySelector(".up-right-button");
+        this.leftButton = document.querySelector(".left-button");
+        this.stayButton = document.querySelector(".stay-button");
+        this.rightButton = document.querySelector(".right-button");
+        this.downLeftButton = document.querySelector(".down-left-button");
+        this.downButton = document.querySelector(".down-button");
+        this.downRightButton = document.querySelector(".down-right-button");
+        this.upLeftButton.addEventListener("click", () => {
+            this.movePlayer(this.player.x - 1, this.player.y - 1);
+        });
+        this.upButton.addEventListener("click", () => {
+            this.movePlayer(this.player.x - 1, this.player.y);
+        });
+        this.upRightButton.addEventListener("click", () => {
+            this.movePlayer(this.player.x - 1, this.player.y + 1);
+        });
+        this.leftButton.addEventListener("click", () => {
+            this.movePlayer(this.player.x, this.player.y - 1);
+        });
+        this.stayButton.addEventListener("click", () => {
+            this.movePlayer(this.player.x, this.player.y);
+        });
+        this.rightButton.addEventListener("click", () => {
+            this.movePlayer(this.player.x, this.player.y + 1);
+        });
+        this.downLeftButton.addEventListener("click", () => {
+            this.movePlayer(this.player.x + 1, this.player.y - 1);
+        });
+        this.downButton.addEventListener("click", () => {
+            this.movePlayer(this.player.x + 1, this.player.y);
+        });
+        this.downRightButton.addEventListener("click", () => {
+            this.movePlayer(this.player.x + 1, this.player.y + 1);
+        });
     }
 
     createGrid = (m, n) => {
@@ -133,7 +172,7 @@ export default class Board {
         if (howXChanged === -1 && howYChanged === 0){
             icon.style.transform = 'rotate(-0.5turn)'
         }
-        else if (howXChanged === 0 && howYChanged >= -1) {
+        else if (howXChanged === 0 && howYChanged <= -1) {
              icon.style.transform = 'rotate(0.25turn)'
          }
         else if (howXChanged >= 1 && howYChanged === 0) {
