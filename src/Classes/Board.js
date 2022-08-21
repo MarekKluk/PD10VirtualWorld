@@ -14,7 +14,7 @@ import HolyOrchid from './plants/HolyOrchid';
 import BloodHerb from './plants/BloodHerb';
 import Mandrake from './plants/Mandrake';
 import Player from './Animal/Player';
-import Controls from "./Controls";
+import getOrganismRotation from "../functions/getOrganismRotation";
 
 export default class Board {
   map = document.querySelector('.map');
@@ -137,23 +137,8 @@ export default class Board {
     const icon = organism.icon;
     const howXChanged = currentX - newX;
     const howYChanged = currentY - newY;
-    if (howXChanged === -1 && howYChanged === 0) {
-      icon.style.transform = 'rotate(-0.5turn)';
-    } else if (howXChanged === 0 && howYChanged <= -1) {
-      icon.style.transform = 'rotate(0.25turn)';
-    } else if (howXChanged >= 1 && howYChanged === 0) {
-      icon.style.transform = 'rotate(0turn)';
-    } else if (howXChanged === 0 && howYChanged >= 1) {
-      icon.style.transform = 'rotate(0.75turn)';
-    } else if (howXChanged <= -1 && howYChanged <= -1) {
-      icon.style.transform = 'rotate(0.375turn)';
-    } else if (howXChanged <= -1 && howYChanged >= 1) {
-      icon.style.transform = 'rotate(-0.375turn)';
-    } else if (howXChanged >= 1 && howYChanged <= -1) {
-      icon.style.transform = 'rotate(0.125turn)';
-    } else if (howXChanged >= 1 && howYChanged >= 1) {
-      icon.style.transform = 'rotate(-0.125turn)';
-    }
+    const rotation = getOrganismRotation(howXChanged, howYChanged)
+    icon.style.transform = rotation;
   };
   generateCoordinates = () => {
     return Math.floor(Math.random() * 19);
