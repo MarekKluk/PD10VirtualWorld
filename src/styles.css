@@ -1,4 +1,6 @@
 body {
+  margin-left: auto;
+  margin-right: auto;
   width: 100vh;
   height: 100vh;
   font-family: 'Roboto', sans-serif;
@@ -11,7 +13,7 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 840px;
+  width: 850px;
   height: 840px;
 }
 .one-tile {
@@ -110,10 +112,9 @@ body {
 .organism-description {
   font-weight: bold;
 }
+
 .new-game-popup-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
@@ -126,7 +127,7 @@ body {
   max-width: 80%;
 }
 .new-game-popup-container.inactive {
-  transform: translate(-50%, -50%) scale(0);
+  transform: scale(0);
 }
 .new-game-header {
   display: flex;
