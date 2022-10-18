@@ -1,17 +1,20 @@
 body {
+  margin-left: auto;
+  margin-right: auto;
   width: 100vh;
   height: 100vh;
-  margin: auto;
+  font-family: 'Roboto', sans-serif;
 }
 .map {
-  margin: auto;
   position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 840px;
+  width: 850px;
   height: 840px;
-  border: 1px solid black;
 }
 .one-tile {
   display: flex;
@@ -19,6 +22,10 @@ body {
   height: 40px;
   border: 1px solid black;
   cursor: pointer;
+}
+.one-tile img {
+  width: 35px;
+  height: 35px;
 }
 .one-tile:hover {
   background-color: gray;
@@ -84,7 +91,7 @@ body {
 }
 .organism-tile {
   width: 250px;
-  height: 100px;
+  height: 110px;
   cursor: pointer;
   padding: 10px 15px;
   display: flex;
@@ -101,4 +108,71 @@ body {
 .organism-list img {
   width: 50px;
   height: 50px;
+}
+.organism-description {
+  font-weight: bold;
+}
+
+.new-game-popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 650px;
+  max-width: 80%;
+}
+.new-game-popup-container.inactive {
+  transform: scale(0);
+}
+.new-game-header {
+  display: flex;
+  justify-content: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid black;
+  font-size: 20px;
+  font-weight: bold;
+}
+.new-game-button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+.new-game-button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+.text-style {
+  margin: 5px 5px 5px 5px;
+  font-weight: bold;
+}
+.control-buttons {
+  position: fixed;
+  top: 50%;
+  left: 85%;
+  transform: translate(-50%, -50%) scale(0);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 170px;
+  height: 170px;
+}
+.control-buttons.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.control-button {
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  cursor: pointer;
 }

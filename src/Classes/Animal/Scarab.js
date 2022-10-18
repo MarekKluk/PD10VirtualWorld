@@ -3,7 +3,7 @@ import Plant from '../plants/Plant';
 import Wasp from './Wasp';
 import giveWaspChanceToFlee from '../../functions/giveWaspChanceToFlee';
 
-export default class Tortoise extends Animal {
+export default class Scarab extends Animal {
   strength = 2;
   initiative = 1;
   constructor(grid, x, y, icon) {
@@ -11,7 +11,8 @@ export default class Tortoise extends Animal {
     this.x = x;
     this.y = y;
     this.icon = document.createElement('IMG');
-    this.icon.src = 'https://www.tibia-wiki.net/images/5/5c/Tortoise.gif';
+    this.icon.src =
+      'https://www.tibia-wiki.net/images/9/9a/Burrowing_Beetle.gif';
   }
   interaction = (organismToInteractWith) => {
     if (organismToInteractWith instanceof Animal) {
@@ -25,13 +26,13 @@ export default class Tortoise extends Animal {
       if (giveWaspChanceToFlee()) {
         this.fight(organismToInteractWith);
       }
-    } else if (organismToInteractWith instanceof Tortoise) {
+    } else if (organismToInteractWith instanceof Scarab) {
       this.mate(organismToInteractWith);
     } else {
       this.fight(organismToInteractWith);
     }
   };
   produceNewSpeciesMember = (x, y) => {
-    return new Tortoise(this.grid, x, y, this.icon);
+    return new Scarab(this.grid, x, y, this.icon);
   };
 }
