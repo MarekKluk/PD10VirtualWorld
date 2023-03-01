@@ -1,6 +1,6 @@
 import './styles.css';
-import Board from './Classes/Board';
-import Controls from "./Classes/Controls";
+import Board from './src/Classes/Board';
+import Controls from "./src/Classes/Controls";
 const newGameButton = document.querySelector('.new-game-button');
 const newGamePopup = document.querySelector('.new-game-popup-container');
 const controlButtons = document.querySelector('.control-buttons');
