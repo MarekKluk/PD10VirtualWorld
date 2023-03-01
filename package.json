@@ -3,23 +3,26 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "http://marekkluk.github.io/PD10VirtualWorld",
   "scripts": {
     "build": "rimraf ./dist && webpack",
     "start": "webpack-dev-server",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
     "css-loader": "^6.7.1",
+    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "style-loader": "^3.3.1",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.9.0",
-    "prettier": "^2.6.2"
+    "webpack-dev-server": "^4.9.0"
   }
 }
