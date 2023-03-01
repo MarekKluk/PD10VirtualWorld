@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+    rel="stylesheet"
+  />
+  <head>
+    <meta charset="UTF-8" />
+    <title>Webpack App</title>
+  <script defer src="main.9a4d047bc0e0b25c3ae5.bundle.js"></script></head>
+  <body>
+      <div class="new-game-popup-container">
+        <header class="new-game-header">Virtual World</header>
+        <div class="rules-description, text-style">
+          <p>
+            Virtual World is a turn-based game with different organisms. The map
+            has 20x20 tiles and contains various animals, plants, and the player.
+          </p>
+          <p>Rules:</p>
+          <ul>
+            <li>
+              In each turn, every organism performs an action in the order of
+              initiative. The organisms with higher initiative move first. If
+              organisms have equal initiative, the older organism has priority,
+            </li>
+            <li>
+              Every animal moves in a random direction each turn, if not specified
+              otherwise,
+            </li>
+            <li>
+              If two animals of different species meet, they fight. The animal
+              with higher strength wins,
+            </li>
+            <li>
+              If animals of the same species meet, they create a third animal in
+              one of the free adjoining fields,
+            </li>
+            <li>
+              The plants do not move in any direction at each turn. Instead, they
+              have a 10% chance of spreading to one of the adjoining fields if
+              there is any unoccupied,
+            </li>
+            <li>If an animal sets foot on a plant, it gets eaten,</li>
+            <li>You can add new organism, by clicking on an empty field,</li>
+            <li>
+              Each organism has specific unique skills, that are described when
+              you try to add new one.
+            </li>
+          </ul>
+          <div class="controls-explanation text-style">
+            <p>Controls:</p>
+            <p>
+              Player can move in all eight directions, or stay in the same place
+              for the turn.
+            </p>
+            You can control the player with a numpad, or if your keyboard is not
+            equipped with it, then with the buttons on the right side of the
+            board.
+          </div>
+        </div>
+        <div class="new-game-button-container">
+          <button class="new-game-button">New Game</button>
+        </div>
+      </div>
+    <div class="map"></div>
+    <div class="control-buttons">
+      <button class="up-left-button control-button">&#8598;</button>
+      <button class="up-button control-button">&#8593;</button>
+      <button class="up-right-button control-button">&#8599;</button>
+      <button class="left-button control-button">&#8592;</button>
+      <button class="stay-button control-button">X</button>
+      <button class="right-button control-button">&#8594;</button>
+      <button class="down-left-button control-button">&#8601;</button>
+      <button class="down-button control-button">&#8595;</button>
+      <button class="down-right-button control-button">&#8600;</button>
+    </div>
+    <div class="popup-container">
+      <header class="popup-header">
+        <div class="title">Add new organism</div>
+        <button data-close-button class="close-button">&times;</button>
+      </header>
+      <div class="organism-list">
+        <div class="organism-row-wrap">
+          <div class="wolf-tile organism-tile">
+            <img src="https://www.tibia-wiki.net/images/8/82/Wolf.gif" />
+            <div class="organism-description">
+              <div class="organism-name">Wolf</div>
+              <div class="Organism-parameters">Strength:9, Initiative:5</div>
+            </div>
+          </div>
+          <div class="grass-tile organism-tile">
+            <img src="https://www.tibia-wiki.net/images/8/86/Goat_Grass.gif" />
+            <div class="organism-description">
+              <div class="organism-name">Grass</div>
+              <div class="Organism-parameters"></div>
+            </div>
+          </div>
+        </div>
+        <div class="organism-row-wrap">
+          <div class="sheep-tile organism-tile">
+            <img src="https://www.tibia-wiki.net/images/2/2b/Sheep.gif" />
+            <div class="organism-description">
+              <div class="organism-name">Sheep</div>
+              <div class="Organism-parameters">Strength:3, Initiative:4</div>
+            </div>
+          </div>
+          <div class="holy-orchid-tile organism-tile">
+            <img src="https://www.tibia-wiki.net/images/c/cb/Holy_Orchid.gif" />
+            <div class="organism-description">
+              <div class="organism-name">Holy Orchid</div>
+              <div class="Organism-parameters">
+                Eating it boosts the strength by 3 points
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="organism-row-wrap">
+          <div class="fox-tile organism-tile">
+            <img src="https://www.tibia-wiki.net/images/a/ad/Fox.gif" />
+            <div class="organism-description">
+              <div class="organism-name">Fox</div>
+              <div class="Organism-parameters">Strength:4, Initiative:7</div>
+              <div class="Organism-parameters">
+                Never tries to move to a field occupied by a stronger organism
+              </div>
+            </div>
+          </div>
+          <div class="blood-herb-tile organism-tile">
+            <img src="https://www.tibia-wiki.net/images/d/d9/Blood_Herb.gif" />
+            <div class="organism-description">
+              <div class="organism-name">Blood Herb</div>
+              <div class="Organism-parameters">
+                Every organism that eats it dies
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="organism-row-wrap">
+          <div class="wasp-tile organism-tile">
+            <img src="https://www.tibia-wiki.net/images/d/d7/Wasp.gif" />
+            <div class="organism-description">
+              <div class="organism-name">Wasp</div>
+              <div class="Organism-parameters">Strength:4, Initiative:4</div>
+              <div class="Organism-parameters">
+                Has a double range of movement and a 50% chance of fleeing from
+                a fight
+              </div>
+            </div>
+          </div>
+          <div class="mandrake-tile organism-tile">
+            <img src="https://www.tibia-wiki.net/images/1/12/Mandrake.gif" />
+            <div class="organism-description">
+              <div class="organism-name">Mandrake</div>
+              <div class="Organism-parameters">
+                Has three times as much chance of spreading as other plants
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="organism-row-wrap">
+          <div class="scarab-tile organism-tile">
+            <img
+              src="https://www.tibia-wiki.net/images/9/9a/Burrowing_Beetle.gif"
+            />
+            <div class="organism-description">
+              <div class="organism-name">Scarab</div>
+              <div class="Organism-parameters">Strength:2, Initiative:1</div>
+              <div class="Organism-parameters">
+                Won't change its field 75% of the time. Defends itself from
+                organisms with a strength lower than 5
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="overlay"></div>
+  </body>
+</html>
